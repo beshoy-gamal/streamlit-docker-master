@@ -1,0 +1,28 @@
+library identifier: 'jenkins@main', 
+        retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/beshoy-gamal/jenkins.git'])
+
+pipeline {
+  agent any
+
+  stages {
+    stage('Audit') {                        
+            steps {
+                auditTools()
+            }
+        }
+    stage('stage1') {
+      steps {
+        echo 'Hello1'
+        echo 'Hello2'
+      }
+    }
+
+    stage('stage2') {
+      steps {
+        echo 'Hello Stage 2'
+      }
+    }
+
+  }
+
+}
