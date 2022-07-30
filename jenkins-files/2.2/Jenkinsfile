@@ -27,12 +27,14 @@ pipeline {
             }
             steps {
                 echo "Deploying release ${RELEASE} to environment ${TARGET_ENVIRONMENT}"
+                writeFile file: 'test-results.txt', text: "Deploying release ${RELEASE} to environment ${TARGET_ENVIRONMENT}"
             }
         }
     }
             post {
           always {
              echo 'Prints whether deploy happened or not, success or failure'
+             archiveArtifacts 'test-results.txt'
           }
         }
 }
