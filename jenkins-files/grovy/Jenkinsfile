@@ -7,10 +7,7 @@ pipeline {
         RELEASE='20.04'
     }
     stages {
-        stage('Initiat') {
-            steps {
-                echo "Testing release ${RELEASE}..."
-            }
+            auditTools()
         }
         stage('Build') {
             agent any
@@ -58,4 +55,12 @@ pipeline {
           }
         }
     
+}
+
+
+void auditTools() {
+    sh '''
+        git version
+        docker version
+    '''
 }
