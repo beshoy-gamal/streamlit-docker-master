@@ -11,6 +11,7 @@ pipeline {
     stage('stage2') {
       steps {
         echo 'Hello Stage 2'
+        bat 'docker compose up'
       }
     }
 
