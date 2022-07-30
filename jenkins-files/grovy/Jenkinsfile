@@ -26,7 +26,7 @@ pipeline {
                 echo "Testing release ${RELEASE}..."
             }
         }
-    }
+    
         stage('Deploy') {
             input {
               message 'Deploy????'
@@ -56,4 +56,5 @@ pipeline {
              echo 'Prints whether deploy happened or not, success or failure'
           }
         }
+    }
 }
