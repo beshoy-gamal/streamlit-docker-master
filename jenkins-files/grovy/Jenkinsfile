@@ -7,8 +7,10 @@ pipeline {
         RELEASE='20.04'
     }
     stages {
+        stage('chech env') {
             auditTools()
         }
+        
         stage('Build') {
             agent any
             environment {
