@@ -20,7 +20,7 @@ pipeline {
     stage('stage2') {
       steps {
         echo 'Hello Stage 2'
-        sh 'docker version'
+        bat 'docker version'
       }
     }
 
