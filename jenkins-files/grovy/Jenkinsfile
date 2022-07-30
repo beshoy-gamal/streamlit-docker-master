@@ -26,6 +26,7 @@ pipeline {
                 echo "Testing release ${RELEASE}..."
             }
         }
+    }
         stage('Deploy') {
             input {
               message 'Deploy????'
@@ -38,7 +39,7 @@ pipeline {
                 writeFile file: 'test-results.txt', text: "Deploying release ${RELEASE} to environment ${TARGET_ENVIRONMENT}"
             }
         }
-    }
+    
             stage('Release') {
                 when {
                     expression { return params.RC }
