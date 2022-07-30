@@ -8,9 +8,10 @@ pipeline {
     }
     stages {
         stage('chech env') {
-            auditTools()
+            steps {
+                auditTools()
+            }
         }
-        
         stage('Build') {
             agent any
             environment {
