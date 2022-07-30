@@ -22,7 +22,7 @@ pipeline {
             input {
               message 'Deploy????'
               parameters {
-                booleanParam 'Confirmed.'
+                    string(name: 'TARGET_ENVIRONMENT', defaultValue: 'PROD', description: 'Target deployment environment')
               }
             }
             steps {
